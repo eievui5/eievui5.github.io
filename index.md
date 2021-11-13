@@ -1,37 +1,7 @@
-## Welcome to GitHub Pages
+## Hi! I'm Eievui, and I make Game Boy games.
 
-You can use the [editor on GitHub](https://github.com/GreenAndEievui/greenandeievui.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+I've been programming since about 2015, but I really found my passion for it when I started playing around with the Game Boy in 2019. I started out making very simple Pokemon romhacks, getting a feel for working with existing code and hacking it to do what I want. A while later I decided I wanted to get better at ASM, and started working on Kirby's Dream Land DX. This was a project which took a little over two weeks of non-stop work, and by the end I had a working version of Kirby's Dream Land in full color.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+After working on Kirby's Dream Land DX I began to branch out, playing with a few languages before settling on using Godot to make a game engine. I spent the next few months getting used to aspects of higher-level/modern development; object-oriented programming, event observers, GUIs, and multi-threading. After a while though, I started to feel like making a game for modern computers was too overwhelming, and returned to the Game Boy with my new experience to see if I could make my own engine from scratch.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/GreenAndEievui/greenandeievui.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+This engine, VuiBui, first made it onto GitHub on December 23 of 2020, and I've been sporadically working on it since then. In that time I've also worked on writing  tools and a few short tutorials for Game Boy Development, as well as making a contribution or two to RGBDS, the community-made compiler toolchain for the Game Boy.
