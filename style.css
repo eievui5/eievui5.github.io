@@ -1,7 +1,8 @@
 body {
     background-color:#FFE6FF;
+    background-image: url("watercolor.png");
     font-family: Ubuntu, sans-serif;
-    line-height: 20px;
+    line-height: 24px;
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 80px;
@@ -9,8 +10,7 @@ body {
 h1 {line-height: 32px; font-family: 'Arial Narrow', Ubuntu, sans-serif;}
 h2 {font-family:'Arial Narrow', Ubuntu, sans-serif;}
 p {font-weight:400;}
-img {display: block; margin-left: auto; margin-right: auto;}
-video {display: block; margin-left: auto; margin-right: auto;}
+img, video {display: block; margin-left: auto; margin-right: auto;}
 .header {
     border-style: none;
     width: 100%;
