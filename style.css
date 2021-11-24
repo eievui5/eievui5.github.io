@@ -3,8 +3,13 @@
     src: url("architects-daughter.ttf");
 }
 
+:root {
+    --page-color: #FFE6FF;
+    --emphasis-font: "Architect's Daughter", 'Arial Narrow', Ubuntu, sans-serif;
+}
+
 body {
-    background-color:#FFE6FF;
+    background-color: var(--page-color);
     background-image: url("watercolor.png");
     font-family: Ubuntu, sans-serif;
     line-height: 24px;
@@ -12,8 +17,26 @@ body {
     margin-right: 10%;
     margin-bottom: 80px;
 }
-h1 {line-height: 32px; font-family: "Architect's Daughter", 'Arial Narrow', Ubuntu, sans-serif;}
-h2, h3 {font-family:"Architect's Daughter", 'Arial Narrow', Ubuntu, sans-serif;}
+button {
+    border: none;
+    border-radius: 12px;
+    background-color: #008CBA;
+    color: white;
+    cursor: pointer;
+    padding: 4px 16px;
+    width: 150px;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    font-family: var(--emphasis-font);
+    font-weight: bold;
+}
+button:hover {
+    background-color: aliceblue;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    color: black;
+}
+h1 {line-height: 32px; font-family: var(--emphasis-font);}
+h2, h3 {font-family: var(--emphasis-font);}
 p {font-weight:400;}
 img, video {display: block; margin-left: auto; margin-right: auto;}
 .header {
