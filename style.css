@@ -7,15 +7,16 @@
     --page-color: #FFE6FF;
     --emphasis-font: "Architect's Daughter", 'Arial Narrow', Ubuntu, sans-serif;
 }
-
+html {
+    margin: 0 16px;
+}
 body {
     background-color: var(--page-color);
     background-image: url("watercolor.png");
     font-family: Ubuntu, sans-serif;
     line-height: 24px;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 80px;
+    max-width: 60em;
+    margin: 0 auto 80px;
 }
 button {
     border: none;
@@ -37,7 +38,10 @@ button:hover {
 }
 h1 {line-height: 32px; font-family: var(--emphasis-font);}
 h2, h3 {font-family: var(--emphasis-font);}
-p {font-weight:400;}
+p {
+    font-weight: 400;
+    margin-bottom: 1ch;
+}
 img, video {display: block; margin-left: auto; margin-right: auto;}
 .header {
     border-style: none;
