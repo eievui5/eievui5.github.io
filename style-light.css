@@ -4,7 +4,7 @@
 }
 
 :root {
-    --page-color: #201720;
+    --page-color: #FFE6FF;
     --emphasis-font: "Architect's Daughter", 'Arial Narrow', Ubuntu, sans-serif;
 }
 html {
@@ -12,9 +12,8 @@ html {
 }
 body {
     background-color: var(--page-color);
-    background-image: url("assets/tinywatercolor.png");
+    background-image: url("assets/watercolor.png");
     font-family: Ubuntu, sans-serif;
-    color: white;
     line-height: 24px;
     max-width: 60em;
     margin: 0 auto 80px;
@@ -54,10 +53,4 @@ header {
     margin-top: 0;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
-}
-a:link {
-    color: #008CBA;
-}
-a:visited {
-    color: rgb(248, 138, 193);
 }
