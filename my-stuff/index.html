@@ -7,13 +7,25 @@
     <title>My stuff | Eievui</title>
     <link rel="icon" href="../favicon.ico">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        h1 {text-align: center;}
+    </style>
 </head>
 <body style="overflow-x: hidden;">
     <header><iframe class="header" src="../header.html"></iframe></header>
     <h1 style="text-align: center;">My stuff</h1>
     <p style="text-align: center;">Here are some of the projects I've done!</p>
 
-    <h1><a id="kdl-dx" href="https://github.com/GreenAndEievui/kdl-dx" target="_blank" rel="noreferrer noopener" style="text-align:center;">Kirby’s Dream Land DX</a></h1>
+    <h1><a id="vuiiger" href="https://github.com/GreenAndEievui/vuiiger-engine" target="_blank">Vuiiger</a></h1>
+    <p>
+        An experimental Game Boy engine written in C, pushing the limits of the
+        system's video memory and standard graphical capabilities.
+    </p>
+    <video width=auto height="320px" autoplay loop controls>
+        <source src="vuiiger.mp4" type="video/mp4">
+    </video>
+
+    <h1><a id="kdl-dx" href="https://github.com/GreenAndEievui/kdl-dx" target="_blank">Kirby’s Dream Land DX</a></h1>
     <p>
         The first Game Boy project I finished: A Kirby's Dream Land hack which
         ports the game to the Game Boy Color.
@@ -22,26 +34,28 @@
         <source src="kdl-dx.mp4" type="video/mp4">
     </video>
 
-    <h1><a id="vuibui" href="https://github.com/GreenAndEievui/vuibui-engine" target="_blank" rel="noreferrer noopener" style="text-align:center;">VuiBui</a></h1>
+    <h1><a id="vuibui" href="https://github.com/GreenAndEievui/vuibui-engine" target="_blank">VuiBui</a></h1>
     <p>
         An extensible Game Boy engine written entirely in RGBASM/SM83 assembly,
         with two custom scripting languages for programming events and enemies.
     </p>
     <img src="vuibui.png" height="320">
 
-    <h1><a id="vuiiger" href="https://github.com/GreenAndEievui/vuibui-gbdk" target="_blank" rel="noreferrer noopener" style="text-align:center;">Vuiiger</a></h1>
+    <h1><a id="csp" href="https://github.com/GreenAndEievui/csp" target="_blank">CSP</a></h1>
     <p>
-        An experimental Game Boy engine written in C, pushing the limits of the
-        system's video memory and standard graphical capabilities.<br>
-        An assembly rewrite is currently being worked on <a href="https://github.com/GreenAndEievui/vuiiger-engine" target="_blank" rel="noreferrer noopener">here</a>.
+        A PHP-like program which allows any language to be embedded into text
+        files. This can be extended and used as a server-side scripting
+        language, or even serve as a macro language to generate text files or
+        source code.
+        <br>
+        Currently, C, C++, Rust, and Python have support within the program, but
+        new languages can easily be added in <em>under a minute</em>.
     </p>
-    <video width=auto height="320px" autoplay loop controls>
-        <source src="vuiiger.mp4" type="video/mp4">
-    </video>
+    <img src="csp.png" height="320">
 
     <br>
     <p style="text-align: center;">
-        Oh, and <a target="_blank" rel="noreferrer noopener" href="https://github.com/GreenAndEievui/greenandeievui.github.io">this website!</a>
+        Oh, and <a target="_blank" href="https://github.com/GreenAndEievui/greenandeievui.github.io">this website!</a>
     </p>
 </body>
 </html>
