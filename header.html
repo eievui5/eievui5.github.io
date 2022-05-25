@@ -10,23 +10,51 @@
     <base target="_parent">
     <style>
         body {
-            background-color: rgb(248, 138, 193);
-            background-image: url("assets/double-bubble-outline.png");
-            margin-top: 1ch;
-            margin-left: 10%;
+            background-color: rgb(38, 38, 38);
+            background-image: none;
+            margin-top: 6px;
+            margin-left: 10px;
             overflow-y: hidden;
             white-space: nowrap;
+            color: azure;
+            font-size: large;
+        }
+        a {
+            margin-left: 10px;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+        a:visited {
+            color: azure;
+        }
+        a:hover {
+            color: turquoise;
+        }
+        button {
+            border: none;
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            padding: 4px 16px;
+            width: 150px;
+            font-size: 16px;
+            font-family: var(--emphasis-font);
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        button:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            color: black;
         }
     </style>
 </head>
 <body>
     <a href="/"><img src="assets/eievui.png" width="60px" style="float: left; margin-right: 10px; border-radius: 50%;"></a>
-    <div style="font-family: 'Architect\'s Daughter';">
-        <div style="font-size: xx-large; margin-bottom: 5px; color: black">Eievui</div>
-        <a href="./"><button>Home</button></a>
-        <a href="my-stuff/"><button>My Stuff</button></a>
-        <a href="resources/"><button>Resources</button></a>
-        <a href="archive/"><button>Archive</button></a>
+    <div style="margin-top: -5px;">
+        <a href="./">Home</a>
+        <a href="my-stuff/">My Stuff</a>
+        <a href="resources/">Resources</a>
+        <a href="archive/">Archive</a>
     </div>
 </body>
 </html>

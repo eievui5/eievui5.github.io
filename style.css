@@ -5,52 +5,53 @@
 
 :root {
     --page-color: #FFE6FF;
-    --emphasis-font: "Architect's Daughter", 'Arial Narrow', Ubuntu, sans-serif;
+    --emphasis-font: Ubuntu, sans-serif;
 }
+
 html {
     margin: 0 16px;
 }
+
 body {
     background-color: var(--page-color);
     background-image: url("assets/watercolor.png");
-    font-family: Ubuntu, sans-serif;
+    font-family: system-ui, Ubuntu, sans-serif;
     line-height: 24px;
     max-width: 60em;
     margin: 0 auto 80px;
 }
-button {
-    border: none;
-    border-radius: 12px;
-    background-color: #008CBA;
-    color: white;
-    cursor: pointer;
-    padding: 4px 16px;
-    width: 150px;
-    font-size: 16px;
-    transition-duration: 0.4s;
-    font-family: var(--emphasis-font);
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-button:hover {
-    background-color: aliceblue;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    color: black;
-}
+
 h1 {line-height: 32px; font-family: var(--emphasis-font);}
 h2, h3 {font-family: var(--emphasis-font);}
 p {
     font-weight: 400;
     margin-bottom: 1ch;
 }
+
 img, video {display: block; margin-left: auto; margin-right: auto;}
+
 .header {
     border-style: none;
     width: 100%;
-    height: 75px;
+    height: 73px;
 }
+
 header {
     margin-top: 0;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
+}
+
+a {
+    transition-duration: 0.2s;
+    color:deeppink;
+    text-decoration: none;
+}
+a:visited {
+    color: deeppink;
+    text-decoration: inherit;
+}
+a:hover {
+    transition-duration: 0.4s;
+    color:dodgerblue;
 }
