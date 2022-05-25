@@ -16,9 +16,6 @@
     <title>My stuff | Eievui</title>
     <link rel="icon" href="../favicon.ico">
     <link rel="stylesheet" href="../style.css">
-    <style>
-        h1 {text-align: center;}
-    </style>
 </head>
 <body style="overflow-x: hidden;">
     <header><iframe class="header" src="../header.html"></iframe></header>
@@ -28,7 +25,11 @@
     <h1><a id="vuiiger" href="https://github.com/GreenAndEievui/vuiiger-engine" target="_blank">Vuiiger</a></h1>
     <p>
         A Game Boy "Mystery Dungeon" engine, making extensive use of the
-        console's limited video memory.
+        console's limited video capabilities. Features 8 independant entities which
+        each can have a unique color palette and set of graphics, procedurally
+        generated levels, a powerful variable-width-font engine which makes text
+        compact and easy to read, and a custom scripting language created from
+        scratch for this project, <a href="#evscript">evscript</a>.
     </p>
     <video width=auto height="320px" autoplay loop controls>
         <source src="vuiiger.mp4" type="video/mp4">
@@ -38,7 +39,9 @@
     <p>
         A simple yet versatile programming language originally made for the
         Game Boy. Intended to replace the macro based scripting languages often
-        used in assembly projects.
+        used in assembly projects, evscript provides control flow structures,
+        variable declarations and operators, and compact bytecode output which
+        saves space compared to C or even some assembly code.
     </p>
     <video width=auto height="320px" autoplay loop controls>
         <source src="evs.mp4" type="video/mp4">
@@ -46,8 +49,8 @@
 
     <h1><a id="kdl-dx" href="https://github.com/GreenAndEievui/kdl-dx" target="_blank">Kirby’s Dream Land DX</a></h1>
     <p>
-        The first Game Boy project I finished: A Kirby's Dream Land hack which
-        ports the game to the Game Boy Color.
+        My first project on the Game Boy, Kirby's Dream Land DX is a romhack
+        which adds Game Boy Color support to the original game.
     </p>
     <video width=auto height="320px" autoplay loop controls>
         <source src="kdl-dx.mp4" type="video/mp4">
@@ -56,7 +59,7 @@
     <h1><a id="vuibui" href="https://github.com/GreenAndEievui/vuibui-engine" target="_blank">VuiBui</a></h1>
     <p>
         An extensible Game Boy engine written entirely in RGBASM/SM83 assembly,
-        with two custom scripting languages for programming events and enemies.
+        with two macro-based scripting languages for programming events and enemies.
     </p>
     <img src="vuibui.png" height="320">
 
