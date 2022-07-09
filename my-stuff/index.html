@@ -29,20 +29,25 @@
     <h1 style="text-align: center;">My stuff</h1>
     <p style="text-align: center;">Here are some of the projects I've done!</p>
 
-    <h1><a id="vuiiger" href="https://github.com/GreenAndEievui/vuiiger-engine" target="_blank">Vuiiger</a></h1>
+    <h1><a id="vuiiger" href="https://github.com/GreenAndEievui/vuiiger-engine">Vuiiger</a></h1>
     <p>
         A Game Boy "Mystery Dungeon" engine, making extensive use of the
         console's limited video capabilities. Features 8 independant entities which
-        each can have a unique color palette and set of graphics, procedurally
+        each have a unique color palette and set of graphics, procedurally
         generated levels, a powerful variable-width-font engine which makes text
         compact and easy to read, and a custom scripting language created from
         scratch for this project, <a href="#evscript">evscript</a>.
     </p>
-    <video autoplay loop controls>
-        <source src="vuiiger.mp4" type="video/mp4">
-    </video>
+    <div style="display: flex;">
+        <video autoplay loop controls style="flex: 50%;">
+            <source src="vuiiger.mp4" type="video/mp4">
+        </video>
+        <video autoplay loop controls style="flex: 50%;">
+            <source src="vuiiger-map.mp4" type="video/mp4">
+        </video>
+    </div>
 
-    <h1><a id="evscript" href="https://github.com/GreenAndEievui/evscript" target="_blank">evscript</a></h1>
+    <h1><a id="evscript" href="https://github.com/GreenAndEievui/evscript">evscript</a></h1>
     <p>
         A simple yet versatile programming language originally made for the
         Game Boy. Intended to replace the macro based scripting languages often
@@ -50,11 +55,14 @@
         variable declarations and operators, and compact bytecode output which
         saves space compared to C or even some assembly code.
     </p>
-    <video autoplay loop controls>
-        <source src="evs.mp4" type="video/mp4">
-    </video>
+    <div style="display: flex;">
+        <img src="evscript-source.png" style="flex: 50%;">
+        <video autoplay loop controls style="flex: 50%;">
+            <source src="evscript-hello-world.mp4" type="video/mp4">
+        </video>
+    </div>
 
-    <h1><a id="kdl-dx" href="https://github.com/eievui5/kdl-dx" target="_blank">Kirby’s Dream Land DX</a></h1>
+    <h1><a id="kdl-dx" href="https://github.com/eievui5/kdl-dx">Kirby’s Dream Land DX</a></h1>
     <p>
         My first project on the Game Boy, Kirby's Dream Land DX is a romhack
         which adds Game Boy Color support to the original game.
@@ -63,7 +71,7 @@
         <source src="kdl-dx.mp4" type="video/mp4">
     </video>
 
-    <h1><a id="vuibui" href="https://github.com/eievui5/vuibui-engine" target="_blank">VuiBui</a></h1>
+    <h1><a id="vuibui" href="https://github.com/eievui5/vuibui-engine">VuiBui</a></h1>
     <p>
         An extensible Game Boy engine written entirely in RGBASM/SM83 assembly,
         with two macro-based scripting languages for programming events and enemies.
@@ -72,7 +80,7 @@
 
     <br>
     <p style="text-align: center;">
-        Oh, and <a target="_blank" href="https://github.com/eievui5/eievui.ml">this website!</a>
+        Oh, and <a href="https://github.com/eievui5/eievui.ml">this website!</a>
     </p>
 </body>
 </html>
