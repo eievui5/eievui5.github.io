@@ -1,0 +1,5 @@
+title = "Blog"
+
+[[tag]]
+name = "Esprit Development"
+description = "Stories and articles relating to the development of *Esprit*, my Mystery Dungeon-inspired dungeon crawler for the Nintendo Game Boy"

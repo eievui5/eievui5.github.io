@@ -1,9 +1,8 @@
-<!--
-	published: 2023-04-04
-	tag: esprit-dev
+<!-- metadata
+title = "Creating Efficient Entity Structures"
+published = 2023-04-04
+tags = ["Esprit Development"]
 -->
-
-# <center> Creating Efficient Entity Structures </center>
 
 Esprit, like most video games, has a large array of complex "actors" or "entities" which move around and act within the game world.
 These entities' data structures tend to be very large and complex,
