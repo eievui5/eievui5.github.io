@@ -9,6 +9,8 @@ These entities' data structures tend to be very large and complex,
 as they have to support the myriad of unique species in one cohesive interface.
 However, the Game Boy's CPU adds on an extra challenge when it comes to these large data structures: indexing.
 
+![A cutscene from esprit showing 3 characters](assets/esprit-house-cutscene.png)
+
 ## The Problem
 
 The Game Boy's SM83, being an 8-bit CPU, has a fairly restrictive instruction set.
@@ -24,6 +26,8 @@ and you still get the same total of 32KiB of addressable memory.
 
 Of course, a hardware implementation is hardly necessary for manipulating memory in this way.
 In fact, the SM83's ability to combine 2 8-bit registers into a 16-bit register makes this 2-dimensional layout quite easy!
+
+![A diagram showing how addresses can be split](assets/split-address.png)
 
 ## The Solution
 
@@ -41,6 +45,8 @@ This layout isn't appropriate for every array-of-structs, of course, but any lar
 It's also important to note that these structures don't need to be aligned to `xx00`;
 this means that multiple arrays-of-structs can span the same pages,
 and any regions of memory which do need to be placed exactly at `xx00`, such as OAM, can still do so.
+
+![An esprit level with many enemies surrounding the player](assets/esprit-many-enemies.png)
 
 ## Drawbacks
 
