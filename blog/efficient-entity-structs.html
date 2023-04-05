@@ -7,9 +7,19 @@
     <title>My blog</title>
     <link rel="icon" href="../favicon.ico">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        html, body {
+          height: 100%;
+          
+          display: flex;
+          flex-direction: column;
+        }
+    </style>
 </head>
 <body style="overflow-x: hidden;">
     <header><iframe class="header" src="../header.html"></iframe></header>
+
+<div class="page">
 
     <!-- Begin Markdown -->
 <h1><center> Creating Efficient Entity Structures </center></h1>
@@ -65,7 +75,7 @@ However, these types of structures tend to be rare; most RAM regions are only a 
 Depite the fact that Esprit's map is 16,384 (0x4000) bytes
 — <em>half</em> of WRAM — <!-- These are em-dashes -->
 the memory fragmentation didn't turn out to be an issue for this project, so array-of structs works great.</p>
-
+</div>
     <!-- End Markdown -->
 </body>
 </html>

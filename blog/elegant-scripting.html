@@ -7,9 +7,19 @@
     <title>My blog</title>
     <link rel="icon" href="../favicon.ico">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        html, body {
+          height: 100%;
+          
+          display: flex;
+          flex-direction: column;
+        }
+    </style>
 </head>
 <body style="overflow-x: hidden;">
     <header><iframe class="header" src="../header.html"></iframe></header>
+
+<div class="page">
 
     <!-- Begin Markdown -->
 <h1><center> evscript: Elegant Scripting on the Game Boy </center></h1>
@@ -83,7 +93,7 @@ I'm really satisfied with evscript's capabilities as a general-purpose programmi
 being able to embed the logic right alongside character dialogue makes it trivial to tweak all the little details and animations.
 Because cutscenes can play in the middle of a level, evscript can even be used to set flags and control the level environment.
 A dungeon could potentially use evscript to randomly generate not only the layout of each level, but also the shape, tileset, items, and enemies.</p>
-
+</div>
     <!-- End Markdown -->
 </body>
 </html>
