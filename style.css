@@ -41,13 +41,6 @@ header {
     margin-right: calc(-50vw + 50%);
 }
 
-.page {
-    background-color: white;
-    min-height: auto;
-    box-shadow: 0px 0px 5px 5px #898989;
-    border: 20px solid white;
-}
-
 a {
     transition-duration: 0.2s;
     color:deeppink;
@@ -78,10 +71,19 @@ button {
     .landscape-only {
         display: none;
     }
+
+    .page {}
 }
 
 @media (min-width: 480px) {
     .portrait-only {
         display: none;
+    }
+
+    .page {
+        background-color: #FFFFFF40;
+        min-height: auto;
+        box-shadow: 0px 0px 5px 5px #898989;
+        border: 20px solid #FFFFFF40;
     }
 }
