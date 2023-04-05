@@ -7,6 +7,14 @@
     <title>My blog</title>
     <link rel="icon" href="../favicon.ico">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        html, body {
+          height: 100%;
+          
+          display: flex;
+          flex-direction: column;
+        }
+    </style>
 </head>
 <body style="overflow-x: hidden;">
     <header><iframe class="header" src="../header.html"></iframe></header>
@@ -21,6 +29,26 @@
 <li><a href="elegant-scripting.html">evscript: Elegant Scripting on the Game Boy</a><br>April 5th, 2023</li>
 <li><a href="efficient-entity-structs.html">Creating Efficient Entity Structures</a><br>April 4th, 2023</li>
 </ul>
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://eievui.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 </div>
     <!-- End Markdown -->
 </body>
