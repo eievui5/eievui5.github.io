@@ -12,8 +12,6 @@ You can find a collection of my projects on my [projects](my-stuff) page.
 <center>
 
 You can find me on
-[GitHub @eievui5](https://github.com/eievui5),
-[Twitter @eievui50](https://twitter.com/eievui50),
-and [Discord @evie#6478](https://discord.com/).
+[GitHub @eievui5](https://github.com/eievui5)
 
 </center>
