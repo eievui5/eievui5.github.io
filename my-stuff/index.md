@@ -27,12 +27,8 @@ compact and easy to read, and a custom scripting language created from
 scratch for this project, evscript.
 
 <div style="display: flex;">
-<video autoplay loop controls style="flex: 50%;">
-<source src="vuiiger.mp4" type="video/mp4">
-</video>
-<video autoplay loop controls style="flex: 50%;">
-<source src="vuiiger-map.mp4" type="video/mp4">
-</video>
+<img src="esprit-title.png">
+<img src="esprit-gameplay.png">
 </div>
 
 # [evscript](https://github.com/eievui5/evscript)
