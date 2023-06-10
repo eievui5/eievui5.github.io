@@ -3,6 +3,11 @@
 # <center> Resources </center>
 <center> A collection of Game Boy libraries and tutorials. </center>
 
+### [evbmfont](https://github.com/eievui5/evbmfont)
+
+evbmfont converts images into bitmap fonts (`.fnt`).
+You can find a web interface [here](../evbmfont/).
+
 ### [regex.inc](https://github.com/eievui5/regex.inc)
 
 regex.inc is a regex parser written in rgbasm.

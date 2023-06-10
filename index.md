@@ -6,9 +6,11 @@
 
 I'm currently working on a [game engine](https://github.com/eievui5/esprit) and a complementary scripting language,
 [evscript](https://github.com/eievui5/evscript).
-You can find a collection of my projects on my [projects](my-stuff) page.
+You can find a collection of my projects on my [projects](my-stuff/) page.
+Libraries and tutorials can be found on the [resources](resources/) page.
 
 <hr>
+
 <center>
 
 You can find me on
