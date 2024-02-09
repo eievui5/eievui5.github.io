@@ -62,6 +62,6 @@ Another common complaint is the way it fragments the program's memory.
 Since gaps are left between structures, the amount of large, contiguous blocks of data that can fit into RAM is reduced.
 A commonly cited example is the *Mario Land* series, which uses a level format so large that it spans both WRAM *and* SRAM.
 However, these types of structures tend to be rare; most RAM regions are only a few bytes in size.
-Depite the fact that Esprit's map is 16,384 (0x4000) bytes
+Depite the fact that Esprit's map is 4096 (0x1000) bytes
 — *half* of WRAM — <!-- These are em-dashes -->
-the memory fragmentation didn't turn out to be an issue for this project, so array-of structs works great.
+the memory fragmentation didn't turn out to be an issue for this project, and array-of structs works great.
