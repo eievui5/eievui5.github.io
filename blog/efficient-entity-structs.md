@@ -18,11 +18,10 @@ Limited to just 7 registers with only a few 16-bit operations,
 manipulating pointers (which are 16-bit on the system) is a common challenge.
 The system doesn't provide any indexing operations either, making register pressure an even bigger issue.
 
-Game Boy programmers coming from the NES usually lament the lack of *paging*,
-which is often applied on that system for array-of-struct patterns.
-We tend to think of memory as a 1-dimensional tape, but the NES's 6502 models it as a 2-dimensional grid instead.
-Each "axis" of memory is one byte, perfect for an 8-bit CPU,
-and you still get the same total of 32KiB of addressable memory.
+We tend to think of memory as a 1-dimensional tape, but it can be useful in this situation to think of it as a 2-dimensional grid.
+To index this grid you need two values, an X and a Y position.
+This is perfect for what we want: two indexes, one for the array, and one for the struct.
+On the Game Boy's CPU, each "axis" of memory is represented by just one byte, and you still get the same total of 32KiB of addressable memory.
 
 Of course, a hardware implementation is hardly necessary for manipulating memory in this way.
 In fact, the SM83's ability to combine 2 8-bit registers into a 16-bit register makes this 2-dimensional layout quite easy!
