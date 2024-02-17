@@ -17,11 +17,19 @@ Given this connection, making structures for your game suddenly seems a lot easi
 Let's make some constants to assign names to each field, and then create a few structures:
 
 ```rgbasm
-def HEALTH equ 0 ; This should be 16-bit, so the next value is HEALTH+2
-def MAGIC equ 2 ; Magic will be 8 bit, so we'll only add 1 next time
-def SPEED equ 3 ; This value is also 8-bit, which means the final size is 4 bytes.
+; This should be 16-bit,
+; so the next value is HEALTH+2
+def HEALTH equ 0
+; Magic will be 8 bit,
+; so we'll only add 1 next time
+def MAGIC equ 2
+; This value is also 8-bit,
+; which means the final size is 4 bytes.
+def SPEED equ 3 
 
-; Keeping track of the size of a struct is important for accurately allocating enough space to instantiate it.
+; Keeping track of the size of a struct
+; is important for accurately allocating
+; enough space to instantiate it.
 def SIZE equ 4 
 
 Player:
@@ -59,7 +67,8 @@ def HEALTH rb 2 ; allocate two bytes at 0
 def MAGIC rb 1 ; allocate one byte at 2
 def SPEED rb 1 ; allocate one byte at 3
 
-def SIZE rb 0 ; save the current index as the structure's size.
+; Save the current index as the structure's size.
+def SIZE rb 0 
 ```
 
 ...but we can make this even simpler
@@ -78,16 +87,19 @@ include "structs.inc"
     bytes 2, Health
     bytes 1, Magic
     bytes 1, Speed
-    ; rgbds-structs keeps track of the size for you (sizeof_Actor).
   end_struct
+  ; rgbds-structs keeps track of
+  ; the size for you (sizeof_Actor).
 
-; You can define structs now using the dstructs macro.
+; You can define structs now
+; using the dstructs macro.
 dstruct Actor, Player
 dstruct Actor, Enemy
 
 ; a = magic value
 SetPlayerMagic:
-  ; Notice that this is a single label now, instead of `Player + Actor_Magic`.
+  ; Notice that this is a single label now,
+  ; instead of `Player + Actor_Magic`.
   ; dstructs defines these labels for each field.
   ld [Player_Magic], a
   ret
@@ -117,13 +129,14 @@ You can accomplish this by using `extends` in rgbds-structs;
 this copies the field of one struct to another, allowing you to extend it!
 
 ```rgbasm
-  ; Every item has a name and a cost (for buying/selling)
+  ; Every item has a name and a cost
   struct Item
     bytes 2, Name ; This is a pointer
     bytes 1, Cost
   end_struct
 
-  ; Healing items have one more field: the amount of health they heal.
+  ; Healing items have one more field:
+  ; the amount of health they heal.
   struct HealingItem
     extends Item
     bytes 1, HealingAmount
@@ -134,7 +147,8 @@ This works, but we'll also need a way to tell `Item`s and `HealingItem`s apart.
 You could do this using a discriminator byte, like this:
 
 ```rgbasm
-; add `bytes 1, Discriminator` to `Item` and set it to one of the following:
+; add `bytes 1, Discriminator` to `Item`
+; and set it to one of the following:
 def ITEM equ 0
 def HEALING_ITEM equ 1
 ```
@@ -145,7 +159,8 @@ reason about if you're used to using class inheritence.
 
 ```rgbasm
   struct Item
-    ; Set this to either `ItemUseFunction` or `HealingItemUseFunction`.
+    ; Set this to either `ItemUseFunction`
+    ; or `HealingItemUseFunction`.
     bytes 2, UseFunction
     bytes 2, Name
     bytes 1, Cost
