@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My blog</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        html, body {
+          height: 100%;
+          
+          display: flex;
+          flex-direction: column;
+        }
+    </style>
+</head>
+<body style="overflow-x: hidden;">
+    <header><iframe class="header" src="../header.html"></iframe></header>
+
+<div class="page">
+
+    <!-- Begin Markdown -->
+<h1><center> Understanding Structures </center></h1>
+<!-- metadata
+title = "Understanding Structures"
+published = 2024-02-17
+tags = ["Esprit Development"]
+-->
+<p>A common point of confusion for beginners to Game Boy development
+is how high level constructs like &quot;structs&quot;, &quot;classes&quot;, or &quot;records&quot; translate to assembly.
+This problem is a lot simpler than it seems, though; it just requires an understanding of how structures work.</p>
+<p>Put simply, structs are a collection of ordered values <em>of varying size</em>–sounds like an array, doesn't it?
+Like an array, each value in a struct is represented by an index (usually, this is the member's &quot;name&quot;).
+However, unlike an array, values in the structure cannot be added or removed.
+This is a consequence of having a mix of types and sizes for each entry.</p>
+<p>Given this connection, making structures for your game suddenly seems a lot easier.
+Let's make some constants to assign names to each field, and then create a few structures:</p>
+<pre><code class="language-rgbasm">def HEALTH equ 0 ; This should be 16-bit, so the next value is HEALTH+2
+def MAGIC equ 2 ; Magic will be 8 bit, so we'll only add 1 next time
+def SPEED equ 3 ; This value is also 8-bit, which means the final size is 4 bytes.
+
+; Keeping track of the size of a struct is important for accurately allocating enough space to instantiate it.
+def SIZE equ 4 
+
+Player:
+  ds SIZE
+Enemy:
+  ds SIZE
+</code></pre>
+<p>Now you have two objects with common fields!
+You can assess members by adding one of those constants to the base label.</p>
+<p>For example:</p>
+<pre><code class="language-rgbasm">; a = magic value
+SetPlayerMagic:
+  ld [Player + MAGIC], a
+  ret
+
+; Slow down the actor at `hl` by one point
+; hl = actor
+SlowActor:
+  rept SPEED
+    inc hl
+  endr
+  dec [hl]
+  ret
+</code></pre>
+<p>rgbasm actually has some kewords that make defining structs a little easier...</p>
+<pre><code class="language-rgbasm">rsreset ; set the index to 0
+def HEALTH rb 2 ; allocate two bytes at 0
+def MAGIC rb 1 ; allocate one byte at 2
+def SPEED rb 1 ; allocate one byte at 3
+
+def SIZE rb 0 ; save the current index as the structure's size.
+</code></pre>
+<p>...but we can make this even simpler</p>
+<h2>Enter: rgbds-structs</h2>
+<p><a href="https://github.com/ISSOtm/rgbds-structs">rgbds-structs</a> is a library, like hardware.inc,
+that provides some macros you can use for creating structures.</p>
+<p>Here's the previous example, rewritten for rgbds-structs:</p>
+<pre><code class="language-rgbasm">include &quot;structs.inc&quot;
+
+  struct Actor
+    bytes 2, Health
+    bytes 1, Magic
+    bytes 1, Speed
+    ; rgbds-structs keeps track of the size for you (sizeof_Actor).
+  end_struct
+
+; You can define structs now using the dstructs macro.
+dstruct Actor, Player
+dstruct Actor, Enemy
+
+; a = magic value
+SetPlayerMagic:
+  ; Notice that this is a single label now, instead of `Player + Actor_Magic`.
+  ; dstructs defines these labels for each field.
+  ld [Player_Magic], a
+  ret
+
+; Slow down the actor at `hl` by one point
+; hl = actor
+SlowActor:
+  rept Actor_Speed
+    inc hl
+  endr
+  dec [hl]
+  ret
+</code></pre>
+<p>You can read more about rgbds-structs on its <a href="https://github.com/ISSOtm/rgbds-structs">GitHub repository</a>.
+I'll be using it for the rest of this article.</p>
+<h2>Polymorphism</h2>
+<p>Now's where things get fun.
+Polymorphism is often useful for assigning different behaviors to objects in video games.
+For example, you might want to swap out the AI function for your actor structure,
+or add extra fields to items of a certain type.</p>
+<p>We'll start by adding extra fields to a basic structure.
+You can accomplish this by using <code>extends</code> in rgbds-structs;
+this copies the field of one struct to another, allowing you to extend it!</p>
+<pre><code class="language-rgbasm">  ; Every item has a name and a cost (for buying/selling)
+  struct Item
+    bytes 2, Name ; This is a pointer
+    bytes 1, Cost
+  end_struct
+
+  ; Healing items have one more field: the amount of health they heal.
+  struct HealingItem
+    extends Item
+    bytes 1, HealingAmount
+  end_struct
+</code></pre>
+<p>This works, but we'll also need a way to tell <code>Item</code>s and <code>HealingItem</code>s apart.
+You could do this using a discriminator byte, like this:</p>
+<pre><code class="language-rgbasm">; add `bytes 1, Discriminator` to `Item` and set it to one of the following:
+def ITEM equ 0
+def HEALING_ITEM equ 1
+</code></pre>
+<p>Alternatively, you could use a function pointer.
+This is much more flexible and might be a little bit easier to
+reason about if you're used to using class inheritence.</p>
+<pre><code class="language-rgbasm">  struct Item
+    ; Set this to either `ItemUseFunction` or `HealingItemUseFunction`.
+    bytes 2, UseFunction
+    bytes 2, Name
+    bytes 1, Cost
+  end_struct
+
+; hl = Item pointer
+ItemUseFunction:
+  ld a, SFX_ERROR
+  jp PlaySound ; Play the sound in `a`
+
+; hl = HealingItem pointer
+HealingItemUseFunction:
+  ld bc, HealingItem_HealingAmount
+  add hl, bc
+  ld a, [hl]
+  jp HealPlayer ; Heal player by `a`
+</code></pre>
+<p>This has the added benefit of allowing you to assign multiple use functions to the same structure type.
+For example, if you have a <code>HealingItem</code> that should play a special sound,
+you can create another function and assign it to that <code>HealingItem</code>.</p>
+<h2>Structures and Design</h2>
+<p>As a closing tip, I'd like to recommend that you use structs early and often.
+Assembly is an abstract and foreign language to many people, and having the modern comfort of thinking about
+your program in terms of objects can make it easier to reason about your design.</p>
+<p>That's not to say your program should be &quot;object oriented&quot;, or that you need to be using polymorphism everywhere;
+you'll thank yourself for keeping things simple when it comes time to start writing code.</p>
+<p>I also recommend commenting/documenting the usage of your struct extensively.
+It's a lot easier to read a description of what data your program stores and why
+than it is to dive into assembly code to figure out what it does.</p>
+<h2>Further reading</h2>
+<p>Here are some example structures from esprit, for reference:</p>
+<ul>
+<li><a href="https://github.com/eievui5/esprit/src/include/entity.inc">https://github.com/eievui5/esprit/src/include/entity.inc</a>
+<ul>
+<li>Large, heavily commented entity structures. Also makes use of a sort of &quot;VTable&quot;.</li>
+</ul>
+</li>
+<li><a href="https://github.com/eievui5/esprit/src/include/item.inc">https://github.com/eievui5/esprit/src/include/item.inc</a>
+<ul>
+<li>Makes use of <code>extends</code> and a discriminator byte (<code>Item_Type</code>).</li>
+</ul>
+</li>
+<li><a href="https://github.com/eievui5/esprit/src/include/dungeon.inc">https://github.com/eievui5/esprit/src/include/dungeon.inc</a>
+<ul>
+<li>Contains a &quot;sub-structure&quot;, as an example of how to nest structs.</li>
+</ul>
+</li>
+</ul>
+<p>If you have an array of large structures that you're changing often throughout the development of your engine,
+such as a list of actors or enemies, you might be interested in <a href="efficient-entity-structs.html">Creating Efficient Entity Structures</a></p>
+    <!-- End Markdown -->
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://eievui.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+</body>
+</html>
