@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 echo "Converting ./"
 evblog . -p meta/prologue_root.html -e meta/epilogue.html
 

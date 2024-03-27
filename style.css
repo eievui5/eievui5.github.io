@@ -1,11 +1,13 @@
 :root {
-    --page-color: #FFE6FF;
+    --page-color:#2f0f2a;
+    --header-color: #FFE6FF;
     --emphasis-font: Ubuntu, sans-serif;
 }
 
 html {
     height: 100%;
 
+    color: white;
     display: flex;
     flex-direction: column;
     margin: 0 16px;
@@ -13,38 +15,34 @@ html {
 
 body {
     background-color: var(--page-color);
-    background-image: url("assets/watercolor.png");
     font-family: system-ui, Ubuntu, sans-serif;
     line-height: 24px;
-    max-width: 60em;
+    max-width: 50em;
     margin: 0 auto 80px;
 }
 
 h1 {line-height: 32px; font-family: var(--emphasis-font);}
 h2, h3 {font-family: var(--emphasis-font);}
 p {
-    font-weight: 400;
+    font-weight: 500;
+    font-size: 1rem;
     margin-bottom: 1ch;
 }
 
 img, video {display: block; margin-left: auto; margin-right: auto;}
 
-.header {
-    border-style: none;
-    width: 100%;
-    height: 73px;
-}
-
 header {
-    margin-top: 0;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
+    color: black;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 a {
     transition-duration: 0.2s;
-    color:deeppink;
-    text-decoration: none;
+    color: deeppink;
 }
 a:visited {
     color: deeppink;
@@ -81,9 +79,11 @@ button {
     }
 
     .page {
-        background-color: #FFFFFF40;
+    }{}
+        background-color: #21202c;
+        color: white;
         min-height: auto;
-        box-shadow: 0px 0px 5px 5px #898989;
-        border: 20px solid #FFFFFF40;
+        box-shadow: 0px 0px 2px 2px #898989;
+        border: 20px solid #21202c;
     }
 }
