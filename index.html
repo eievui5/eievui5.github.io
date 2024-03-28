@@ -20,8 +20,6 @@
 <div style="margin-top: 2px; margin-left: 1em;margin-bottom: -1em;min-height: 00px">
     <a style="font-weight: 600; margin-right: 2em" href="/">Home</a>
     <a style="font-weight: 600; margin-right: 2em" href="/blog/">Blog</a>
-    <a style="font-weight: 600; margin-right: 2em" href="/resources/">Resources</a>
-    <a style="font-weight: 600; margin-right: 2em" href="/archive/">Archive</a>
     <a style="font-weight: 600; margin-right: 2em" href="https://github.com/eievui5">GitHub</a>
     <div style="display: flex;position: relative; left: 5em;top: -5px; overflow: hidden; white-space: nowrap;">
     <img class="banner13 header-icon" src="/assets/banner/luvui.png"/>
@@ -47,7 +45,7 @@
 <div style="min-height: 120px">
 </div>
 <head>
-<title>Evie | Projects</title>
+<title>Evie</title>
 <style>
     .image {
         float: left;
@@ -77,7 +75,7 @@ scratch for this project, evscript.</p>
 <img class=image src="assets/esprit-title.png">
 <img class=image src="assets/esprit-gameplay.png">
 </div>
-<h1><a href="https://github.com/eievui5/evscript">evscript</a></h1>
+<h3><a href="https://github.com/eievui5/evscript">evscript</a></h3>
 <p>A simple yet versatile programming language originally made for the
 Game Boy. Intended to replace the macro based scripting languages often
 used in assembly projects, evscript provides control flow structures,
@@ -89,13 +87,24 @@ saves space compared to C or even some assembly code.</p>
 <source src="assets/evscript-hello-world.mp4" type="video/mp4">
 </video>
 </div>
-<h1><a href="https://github.com/eievui5/evunit">evunit</a></h1>
+<h3><a href="https://github.com/eievui5/evunit">evunit</a></h3>
 <p>A unit testing program for Game Boy ROMs.
 Configure tests using TOML files and instantly execute them with the built-in CPU emulator.</p>
 <div class=image-row>
 <img class=image src="assets/rgbunit-results.png">
 </div>
-<h1><a href="https://github.com/eievui5/kdl-dx">Kirby’s Dream Land DX</a></h1>
+<h3><a href="https://github.com/eievui5/regex.inc">regex.inc</a></h3>
+<p>regex.inc is a regex parser written in rgbasm.
+Its primary use is picking apart the arguments to complex macros, but feel free to get creative.</p>
+<h3><a href="https://github.com/eievui5/gb-valloc-lib">Game Boy VRAM Allocation Library</a></h3>
+<p>A simple Game Boy library for allocating video memory at runtime. Valloc
+uses a very basic block pattern which takes advantage of the fact that
+VRAM tiles can be addressed using a single byte.</p>
+<h3><a href="https://github.com/eievui5/gb-sprobj-lib">Game Boy Sprite Objects Library</a></h3>
+<p>A small, lightweight library meant to facilitate the rendering of
+sprite objects, including Shadow OAM and OAM DMA, single-entry &quot;simple&quot;
+sprite objects, and Q12.4 fixed-point position metasprite rendering.</p>
+<h3><a href="https://github.com/eievui5/kdl-dx">Kirby’s Dream Land DX</a></h3>
 <p>My first project on the Game Boy. KDL DX is a romhack
 which adds Game Boy Color support to Kirby's Dream Land.</p>
 <div class=image-row>
@@ -103,7 +112,7 @@ which adds Game Boy Color support to Kirby's Dream Land.</p>
 <source src="assets/kdl-dx.mp4" type="video/mp4">
 </video>
 </div>
-<h1><a href="https://github.com/eievui5/vuibui-engine">VuiBui</a></h1>
+<h3><a href="https://github.com/eievui5/vuibui-engine">VuiBui</a></h3>
 <p>A Game Boy engine written entirely in RGBASM/SM83 assembly,
 with two macro-based scripting languages for programming events and enemies.
 These scripting languages led to the creation of evscript.</p>

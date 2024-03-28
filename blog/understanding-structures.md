@@ -1,7 +1,7 @@
 <!-- metadata
 title = "Understanding Structures"
 published = 2024-02-17
-tags = ["Esprit Development"]
+tags = ["gbdev"]
 -->
 
 A common point of confusion for beginners to Game Boy development

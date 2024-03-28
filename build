@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-for i in "./" "resources/" "archive/";
+for i in "./" "archive/";
 do
   echo "Converting $i"
   tmp=$(mktemp)

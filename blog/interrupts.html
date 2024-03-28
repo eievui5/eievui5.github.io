@@ -20,8 +20,6 @@
 <div style="margin-top: 2px; margin-left: 1em;margin-bottom: -1em;min-height: 00px">
     <a style="font-weight: 600; margin-right: 2em" href="/">Home</a>
     <a style="font-weight: 600; margin-right: 2em" href="/blog/">Blog</a>
-    <a style="font-weight: 600; margin-right: 2em" href="/resources/">Resources</a>
-    <a style="font-weight: 600; margin-right: 2em" href="/archive/">Archive</a>
     <a style="font-weight: 600; margin-right: 2em" href="https://github.com/eievui5">GitHub</a>
     <div style="display: flex;position: relative; left: 5em;top: -5px; overflow: hidden; white-space: nowrap;">
     <img class="banner13 header-icon" src="/assets/banner/luvui.png"/>
@@ -46,8 +44,12 @@
 
 <div style="min-height: 120px">
 </div>
-<head><title>Evie | Resources</title></head>
-<h1><center> Interrupts </center></h1>
+<h1><center> Game Boy Interrupts </center></h1>
+<!-- metadata
+title = "Game Boy Interrupts"
+published = 2021-12-02
+tags = ["gbdev"]
+-->
 <p>This guide assumes you have a short project to test code on. ISSOtm's
 &quot;Hello World!&quot; tutorial should work fine as a base.</p>
 <p>Interrupts are used to call a given function when certain conditions are
@@ -222,6 +224,26 @@ VBlankHandler:
 a different tile each VBlank to slowly fill up the screen with a custom
 tile. Or load different graphics during VBlank to animate an existing
 tile!</p>
+    <!-- End Markdown -->
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://eievui.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </div>
 </body>

@@ -1,5 +1,5 @@
 <head>
-<title>Evie | Projects</title>
+<title>Evie</title>
 <style>
     .image {
         float: left;
@@ -34,7 +34,7 @@ scratch for this project, evscript.
 <img class=image src="assets/esprit-gameplay.png">
 </div>
 
-# [evscript](https://github.com/eievui5/evscript)
+### [evscript](https://github.com/eievui5/evscript)
 
 A simple yet versatile programming language originally made for the
 Game Boy. Intended to replace the macro based scripting languages often
@@ -49,7 +49,7 @@ saves space compared to C or even some assembly code.
 </video>
 </div>
 
-# [evunit](https://github.com/eievui5/evunit)
+### [evunit](https://github.com/eievui5/evunit)
 
 A unit testing program for Game Boy ROMs.
 Configure tests using TOML files and instantly execute them with the built-in CPU emulator.
@@ -58,7 +58,24 @@ Configure tests using TOML files and instantly execute them with the built-in CP
 <img class=image src="assets/rgbunit-results.png">
 </div>
 
-# [Kirby’s Dream Land DX](https://github.com/eievui5/kdl-dx)
+### [regex.inc](https://github.com/eievui5/regex.inc)
+
+regex.inc is a regex parser written in rgbasm.
+Its primary use is picking apart the arguments to complex macros, but feel free to get creative.
+
+### [Game Boy VRAM Allocation Library](https://github.com/eievui5/gb-valloc-lib)
+
+A simple Game Boy library for allocating video memory at runtime. Valloc
+uses a very basic block pattern which takes advantage of the fact that
+VRAM tiles can be addressed using a single byte.
+
+### [Game Boy Sprite Objects Library](https://github.com/eievui5/gb-sprobj-lib)
+
+A small, lightweight library meant to facilitate the rendering of
+sprite objects, including Shadow OAM and OAM DMA, single-entry "simple"
+sprite objects, and Q12.4 fixed-point position metasprite rendering.
+
+### [Kirby’s Dream Land DX](https://github.com/eievui5/kdl-dx)
 
 My first project on the Game Boy. KDL DX is a romhack
 which adds Game Boy Color support to Kirby's Dream Land.
@@ -69,7 +86,7 @@ which adds Game Boy Color support to Kirby's Dream Land.
 </video>
 </div>
 
-# [VuiBui](https://github.com/eievui5/vuibui-engine)
+### [VuiBui](https://github.com/eievui5/vuibui-engine)
 
 A Game Boy engine written entirely in RGBASM/SM83 assembly,
 with two macro-based scripting languages for programming events and enemies.

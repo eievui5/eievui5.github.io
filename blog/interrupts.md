@@ -1,6 +1,8 @@
-<head><title>Evie | Resources</title></head>
-
-# <center> Interrupts </center>
+<!-- metadata
+title = "Game Boy Interrupts"
+published = 2021-12-02
+tags = ["gbdev"]
+-->
 
 This guide assumes you have a short project to test code on. ISSOtm's
 "Hello World!" tutorial should work fine as a base.

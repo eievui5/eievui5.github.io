@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My blog</title>
+    <title>Evie | Blog</title>
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/style.css">
     <style>
@@ -13,6 +13,12 @@
           
           display: flex;
           flex-direction: column;
+        }
+        ul {
+            margin: 0 0;
+        }
+        h2 {
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -29,8 +35,6 @@
 <div style="margin-top: 2px; margin-left: 1em;margin-bottom: -1em;min-height: 00px">
     <a style="font-weight: 600; margin-right: 2em" href="/">Home</a>
     <a style="font-weight: 600; margin-right: 2em" href="/blog/">Blog</a>
-    <a style="font-weight: 600; margin-right: 2em" href="/resources/">Resources</a>
-    <a style="font-weight: 600; margin-right: 2em" href="/archive/">Archive</a>
     <a style="font-weight: 600; margin-right: 2em" href="https://github.com/eievui5">GitHub</a>
     <div style="display: flex;position: relative; left: 5em;top: -5px; overflow: hidden; white-space: nowrap;">
     <img class="banner13 header-icon" src="/assets/banner/luvui.png"/>
@@ -55,13 +59,22 @@
 
 <div style="min-height: 120px">
 </div>
-<h1><center> Blog </center></h1>
-<h2>Esprit Development</h2>
+<p>Jump to:</p>
+<ul>
+<li><a href="#esprit">Esprit Development</a></li>
+<li><a href="#gbdev">gbdev</a></li>
+</ul>
+<h2 id="esprit">Esprit Development</h2>
 <p>Stories and articles relating to the development of <em>Esprit</em>, my Mystery Dungeon-inspired dungeon crawler for the Nintendo Game Boy</p>
 <ul>
-<li><a href="understanding-structures.html">Understanding Structures</a><br>February 17th, 2024</li>
 <li><a href="elegant-scripting.html">evscript: Elegant Scripting on the Game Boy</a><br>April 5th, 2023</li>
 <li><a href="efficient-entity-structs.html">Creating Efficient Entity Structures</a><br>April 4th, 2023</li>
+</ul>
+<h2 id="gbdev">gbdev</h2>
+<p>Tutorials and resources for learning Game Boy development.</p>
+<ul>
+<li><a href="understanding-structures.html">Understanding Structures</a><br>February 17th, 2024</li>
+<li><a href="interrupts.html">Game Boy Interrupts</a><br>December 2nd, 2021</li>
 </ul>
     <!-- End Markdown -->
 </div>

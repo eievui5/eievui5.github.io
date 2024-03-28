@@ -2,4 +2,10 @@ title = "Blog"
 
 [[tag]]
 name = "Esprit Development"
+anchor = "esprit"
 description = "Stories and articles relating to the development of *Esprit*, my Mystery Dungeon-inspired dungeon crawler for the Nintendo Game Boy"
+
+[[tag]]
+name = "gbdev"
+anchor = "gbdev"
+description = "Tutorials and resources for learning Game Boy development."
