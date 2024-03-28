@@ -7,12 +7,13 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body style="overflow-x: hidden;">
 <header style="background-color: var(--header-color); background-image: url('/assets/watercolor.png');">
 
 <div style="max-width: 60em; margin: 0 auto;">
 
 <div style="position: relative; margin-top: 1em">
+    <img style="float: left;width: 64px" src="/assets/pfp.png">
     <h2 style="margin: 0 1em;">Evie<span class=name>&nbsp;</span></h2>
 
 <code style="font-size: 1rem;">
@@ -25,16 +26,16 @@
     <div style="display: flex;position: relative; left: 5em;top: -5px; overflow: hidden; white-space: nowrap;">
     <img class=header-icon src="/assets/banner/luvui.png"/>
     <img class=header-icon src="/assets/banner/apple.png"/>
+    <img class=header-icon src="/assets/banner/scarf.png"/>
+    <img class=header-icon src="/assets/banner/aris.png"/>
+    <img class=header-icon src="/assets/banner/pear.png"/>
+    <img class=header-icon src="/assets/banner/reviver_seed.png"/>
     <img class=header-icon src="/assets/banner/bastet.png"/>
     <img class=header-icon src="/assets/banner/twig.png"/>
     <img class=header-icon src="/assets/banner/purefruit.png"/>
-    <img class=header-icon src="/assets/banner/aloe.png"/>
     <img class=header-icon src="/assets/banner/luvui-sleep.png"/>
-    <img class=header-icon src="/assets/banner/pear.png"/>
-    <img class=header-icon src="/assets/banner/reviver_seed.png"/>
-    <img class=header-icon src="/assets/banner/aris.png"/>
     <img class=header-icon src="/assets/banner/pepper.png"/>
-    <img class=header-icon src="/assets/banner/scarf.png"/>
+    <img class=header-icon src="/assets/banner/aloe.png"/>
     <img class=header-icon src="/assets/banner/kangaroo.h.png"/>
     </div>
 </div>
@@ -48,10 +49,16 @@
 <head>
 <title>Evie | Projects</title>
 <style>
-    img, video {
-        width: auto;
-        height: 320px;
-        max-width: 90%;
+    .image {
+        float: left;
+        padding: 5px;
+        width: 360px;
+        height: auto;
+    }
+    .image-row::after {
+        content: "";
+        clear: both;
+        display: table;
     }
 </style>
 </head>
@@ -66,9 +73,9 @@ each have a unique color palette and set of graphics, procedurally
 generated levels, a powerful variable-width-font engine which makes text
 compact and easy to read, and a custom scripting language created from
 scratch for this project, evscript.</p>
-<div style="display: flex;">
-<img src="assets/esprit-title.png">
-<img src="assets/esprit-gameplay.png">
+<div class=image-row>
+<img class=image src="assets/esprit-title.png">
+<img class=image src="assets/esprit-gameplay.png">
 </div>
 <h1><a href="https://github.com/eievui5/evscript">evscript</a></h1>
 <p>A simple yet versatile programming language originally made for the
@@ -76,30 +83,33 @@ Game Boy. Intended to replace the macro based scripting languages often
 used in assembly projects, evscript provides control flow structures,
 variable declarations and operators, and compact bytecode output which
 saves space compared to C or even some assembly code.</p>
-<div style="display: flex;">
-<img src="assets/evscript-source.png" style="flex: 50%;">
-<video loop controls style="flex: 50%;">
+<div class=image-row>
+<img class=image src="assets/evscript-source.png">
+<video class=image loop controls>
 <source src="assets/evscript-hello-world.mp4" type="video/mp4">
 </video>
 </div>
 <h1><a href="https://github.com/eievui5/evunit">evunit</a></h1>
 <p>A unit testing program for Game Boy ROMs.
 Configure tests using TOML files and instantly execute them with the built-in CPU emulator.</p>
-<p><img src="assets/rgbunit-results.png" alt="" /></p>
+<div class=image-row>
+<img class=image src="assets/rgbunit-results.png">
+</div>
 <h1><a href="https://github.com/eievui5/kdl-dx">Kirby’s Dream Land DX</a></h1>
 <p>My first project on the Game Boy. KDL DX is a romhack
 which adds Game Boy Color support to Kirby's Dream Land.</p>
-<video autoplay loop controls>
+<div class=image-row>
+<video class=image loop controls>
 <source src="assets/kdl-dx.mp4" type="video/mp4">
 </video>
+</div>
 <h1><a href="https://github.com/eievui5/vuibui-engine">VuiBui</a></h1>
 <p>A Game Boy engine written entirely in RGBASM/SM83 assembly,
 with two macro-based scripting languages for programming events and enemies.
 These scripting languages led to the creation of evscript.</p>
-<p><img src="assets/vuibui.png" alt="" /></p>
-<center>
-<p>Oh, and <a href="https://github.com/eievui5/eievui.ml">this website</a>!</p>
-</center>
+<div class=image-row>
+<img class=image src="assets/vuibui.png">
+</div>
 
 </div>
 </body>

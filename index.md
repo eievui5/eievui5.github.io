@@ -1,10 +1,16 @@
 <head>
 <title>Evie | Projects</title>
 <style>
-    img, video {
-        width: auto;
-        height: 320px;
-        max-width: 90%;
+    .image {
+        float: left;
+        padding: 5px;
+        width: 360px;
+        height: auto;
+    }
+    .image-row::after {
+        content: "";
+        clear: both;
+        display: table;
     }
 </style>
 </head>
@@ -23,9 +29,9 @@ generated levels, a powerful variable-width-font engine which makes text
 compact and easy to read, and a custom scripting language created from
 scratch for this project, evscript.
 
-<div style="display: flex;">
-<img src="assets/esprit-title.png">
-<img src="assets/esprit-gameplay.png">
+<div class=image-row>
+<img class=image src="assets/esprit-title.png">
+<img class=image src="assets/esprit-gameplay.png">
 </div>
 
 # [evscript](https://github.com/eievui5/evscript)
@@ -36,9 +42,9 @@ used in assembly projects, evscript provides control flow structures,
 variable declarations and operators, and compact bytecode output which
 saves space compared to C or even some assembly code.
 
-<div style="display: flex;">
-<img src="assets/evscript-source.png" style="flex: 50%;">
-<video loop controls style="flex: 50%;">
+<div class=image-row>
+<img class=image src="assets/evscript-source.png">
+<video class=image loop controls>
 <source src="assets/evscript-hello-world.mp4" type="video/mp4">
 </video>
 </div>
@@ -48,16 +54,20 @@ saves space compared to C or even some assembly code.
 A unit testing program for Game Boy ROMs.
 Configure tests using TOML files and instantly execute them with the built-in CPU emulator.
 
-![](assets/rgbunit-results.png)
+<div class=image-row>
+<img class=image src="assets/rgbunit-results.png">
+</div>
 
 # [Kirby’s Dream Land DX](https://github.com/eievui5/kdl-dx)
 
 My first project on the Game Boy. KDL DX is a romhack
 which adds Game Boy Color support to Kirby's Dream Land.
 
-<video autoplay loop controls>
+<div class=image-row>
+<video class=image loop controls>
 <source src="assets/kdl-dx.mp4" type="video/mp4">
 </video>
+</div>
 
 # [VuiBui](https://github.com/eievui5/vuibui-engine)
 
@@ -65,10 +75,6 @@ A Game Boy engine written entirely in RGBASM/SM83 assembly,
 with two macro-based scripting languages for programming events and enemies.
 These scripting languages led to the creation of evscript.
 
-![](assets/vuibui.png)
-
-<center>
-
-Oh, and [this website](https://github.com/eievui5/eievui.ml)!
-
-</center>
+<div class=image-row>
+<img class=image src="assets/vuibui.png">
+</div>
