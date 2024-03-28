@@ -4,7 +4,7 @@
     .image {
         float: left;
         padding: 5px;
-        width: 360px;
+        max-width: 360px;
         height: auto;
     }
     .image-row::after {
