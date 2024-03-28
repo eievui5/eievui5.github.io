@@ -1,21 +1,24 @@
 #!/usr/bin/bash
 
-echo "Converting ./"
-evblog . -p meta/prologue_root.html -e meta/epilogue.html
-
-echo "Converting resources/"
-evblog resources/ -p meta/prologue_sub.html -e meta/epilogue.html
-
-echo "Converting archive/"
-evblog archive/ -p meta/prologue_sub.html -e meta/epilogue.html
-
-echo "Converting my-stuff/"
-evblog my-stuff/ -p meta/prologue_sub.html -e meta/epilogue.html
+for i in "./" "resources/" "archive/";
+do
+  echo "Converting $i"
+  tmp=$(mktemp)
+  cat meta/prologue.html meta/header.html > $tmp 
+  evblog $i -p $tmp -e meta/epilogue.html
+  rm $tmp
+done
 
 echo "Converting blog/"
+tmp=$(mktemp)
+cat meta/prologue.html meta/header.html > $tmp 
 cd blog/
-evblog . -p meta/prologue.html -e meta/epilogue_comments.html -i meta/index.toml
+evblog . -p $tmp -e meta/epilogue_comments.html -i meta/index.toml
+rm $tmp
 
 echo "Reformatting blog/index.html"
-evblog index.md -p meta/prologue.html -e meta/epilogue_plain.html
+tmp=$(mktemp)
+cat meta/prologue.html ../meta/header.html > $tmp 
+evblog index.md -p $tmp -e meta/epilogue_plain.html
 cd ../
+rm $tmp
